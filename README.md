@@ -3,10 +3,11 @@
 ## Phase 1: a simple news DB
 
 Features:
-* users
-* locally hosted
-* sqlite backend
-* flask stack
-* post news story with title, date, tags, facts, analysis.
-* index page where you can see all the posts
+* users *done*
+* locally hosted *done*
+* sqlite backend *done*
+* flask stack *done*
+* post news story with title, date, facts, analysis. *done*
+* index page where you can see all the posts *done*
+* tags
 * search for tags or month/year
