@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Story{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+    <label for="facts">Facts</label>
+    <textarea name="facts" id="facts">{{ request.form['facts'] }}</textarea>
+    <label for="analysis">Analysis</label>
+    <textarea name="analysis" id="analysis">{{ request.form['analysis'] }}</textarea>
+    <label for="news_date">Date</label>
+    <input type="date" name="news_date" id="news_date" required>{{ request.form['news_date'] }}</input>
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

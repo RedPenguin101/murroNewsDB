@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ story['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title"
+      value="{{ request.form['title'] or story['title'] }}" required>
+    <label for="facts">Facts</label>
+    <textarea name="facts" id="facts">{{ request.form['facts'] or story['facts'] }}</textarea>
+    <label for="analysis">Analysis</label>
+    <textarea name="analysis" id="analysis">{{ request.form['analysis'] or story['analysis'] }}</textarea>
+    <label for="news_date">Date</label>
+    <input type = 'date' name="news_date" id="news_date"
+      value="{{ request.form['news_date'] or story['news_date'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('news.delete', id=story['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
